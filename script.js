@@ -28,3 +28,28 @@ function fermer() {
   location.reload();
   
 }
+gsap.from(".text",{
+    opacity:0,
+    stagger:0.4,
+    duration:1.3,
+    ease:"power.out",
+    y:-40,
+    delay:0.1,
+})
+gsap.from(".success div",{
+    opacity:0,
+    stagger:0.4,
+    duration:1,
+    ease:"power.out",
+    x:-20,
+    delay:0.6,
+})
+gsap.from("#email",{
+    opacity:0,
+    stagger:0.4,
+    duration:1,
+    ease:"power.out",
+    scale:1.2,
+    rotate:"-1rad",
+    delay:0.8,
+})
