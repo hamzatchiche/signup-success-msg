@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --Red: hsl(4, 100%, 67%);
+  --Blue800: hsl(234, 29%, 20%);
+  --Blue700: hsl(235, 18%, 26%);
+  --Grey: hsl(0, 0%, 58%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--Blue800);
+  position: absolute;
+}
+.container {
+  position: relative;
+  transform: translate(50%, 50%);
+  display: flex;
+  flex-direction: row-reverse;
+  width: 40rem;
+  height: 25rem;
+  background-color: var(--White);
+  border-radius: 1.2rem;
+}
+.img-desk {
+  height: 23rem;
+  margin-top: 1rem;
+  margin-right: 0.8rem;
+}
+.img-mob{
+    display: none;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 3rem 1rem 3rem 2rem;
+}
+h1 {
+  color: var(--Blue800);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+p {
+  color: var(--Blue700);
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0.6rem 0;
+}
+.success {
+  display: flex;
+  flex-direction: column;
+}
+
+.success-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+.success-item img {
+  width: 1.1rem;
+}
+span {
+  font-size: 0.81rem;
+  color: var(--Blue800);
+}
+.form {
+  margin: 1.5rem 0;
+  width: 90%;
+ 
+}
+.lab{
+     display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.lab span{
+    display: none;
+}
+.form h5 {
+  color: var(--Blue800);
+}
+input {
+  display: block;
+}
+#email {
+  width: 100%;
+  height: 2.5rem;
+    border: none;
+  border: 0.1px solid var(--Grey);
+  border-radius: 0.3rem;
+  color: var(--Blue700);
+  /*  */
+  margin: 1rem 0;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+#email:active{
+    outline:thin outset black ;
+}
+#email ::placeholder{
+    color: var(--Blue700);
+}
+
+/* #sbm{
+    width: 100%;
+    height: 2.4rem;
+    cursor: pointer;
+    border: none;
+    color: var(--White);
+    background-color: var(--Blue800);
+    border-radius: 0.3rem;
+    transition: background-image 3s ease, box-shadow 3s ease;
+}
+#sbm:hover{
+    -webkit-transition: background-image 3s linear;
+    -ms-transition: background-image 3s linear;
+    transition: background-image 3s ease-in;
+    background-image: linear-gradient(to right,hsl(4, 96%, 71%),var(--Red));
+    box-shadow: 0.1rem 0.1rem 0.8rem var(--Red);
+} */
+ #sbm , .success-msg input{
+  width: 100%;
+  height: 2.4rem;
+  cursor: pointer;
+  border: none;
+  color: var(--White);
+  background-color: var(--Blue800);
+  border-radius: 0.3rem;
+
+  background-image: linear-gradient(to right, #FF5572, var(--Red));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  transition: background-size 1s ease-in-out, box-shadow 0.4s ease;
+}
+
+#sbm:hover , .success-msg input:hover{
+  background-size: 100% 100%;
+  box-shadow: 0.1rem 0.1rem 0.8rem var(--Red);
+}
+/* error msg */
+.err-msg{
+    color: var(--Red);
+
+}
+/* success msg  */
+.success-msg{
+  display: none;
+    background-color: var(--White);
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(28rem,50%);
+    height: 20rem;
+    width: 20rem;
+    padding: 2.3rem;
+    border-radius: 1.4rem;
+}
+.success-msg img{
+    width: 2rem;
+}
+.success-msg p{
+    font-size: 0.7rem;
+}
+.success-msg p span{
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+/* footer  */
+.attribution {
+    color: var(--Blue700);
+  font-size: 11px;
+  text-align: center;
+  margin-top: -0.7rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* responsive design  */
+
+@media (max-width:768px) {
+    .container{
+        flex-direction: column;
+        height: 40rem;
+        width: 20rem;
+        transform: translate(12%,2%);
+    }
+    .img-desk{
+        display: none;
+    }
+    .img-mob{
+        display: block;
+        width: 100%;
+
+    }
+    .content{
+        margin-top: 8%;
+    }
+    .attribution{
+        display: none;
+        /* transform: translate(12%,100%); */
+    }
+    .success-msg{
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0,0);
+    height: 100vh;
+    width: 100vw;
+    padding:6rem 1.4rem 0 2.3rem;
+    border-radius: 0;
+}
+
+.success-msg p{
+    font-size: 0.9rem;
+}
+.success-msg p span{
+    font-size: 1.1rem;
+}
+.success-msg input{
+  margin-top: 85%;
+
+}
+}
